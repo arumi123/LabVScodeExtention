@@ -9,15 +9,52 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:labextention.createDirectories",
+    "onView:chatView"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "labextention.helloWorld",
         "title": "Hello World"
+      },
+      {
+        "command": "labextention.createDirectories",
+        "title": "ディレクトリ群を作成"
+      },
+      {
+        "command": "labextention.showChatView",
+        "title": "Show Chat View"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "editorFocus",
+          "command": "labextention.createDirectories",
+          "group": "z_commands"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "chatContainer",
+          "title": "Chat",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    "views": {
+      "chatContainer": [
+        {
+          "id": "chatView",
+          "name": "Chat"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
