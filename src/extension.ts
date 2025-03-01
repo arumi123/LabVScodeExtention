@@ -1,9 +1,8 @@
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
-  // AIチャットビューをサイドバーに表示
   context.subscriptions.push(
-    vscode.window.registerWebviewViewProvider('aiChatView', new AIChatViewProvider(context))
+    vscode.window.registerWebviewViewProvider('chatView', new AIChatViewProvider(context))
   );
 }
 
@@ -29,7 +28,7 @@ class AIChatViewProvider implements vscode.WebviewViewProvider {
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>AI Chat</title>
+        <title>Chat</title>
         <style>
           body {
             font-family: Arial, sans-serif;
@@ -53,7 +52,7 @@ class AIChatViewProvider implements vscode.WebviewViewProvider {
         </style>
       </head>
       <body>
-        <h1>AI Chat</h1>
+        <h1>カスタムRAG Chat</h1>
         <div id="chat-container"></div>
         <input type="text" id="chat-input" placeholder="Type a message..."/>
         <button id="send-button" onclick="sendMessage()">Send</button>

@@ -10,9 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:labextention.createDirectories",
-    "onView:chatView",
-    "onView:aiChatView"
+    "onView:chatView"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -43,27 +41,18 @@
       "activitybar": [
         {
           "id": "chatContainer",
-          "title": "Chat",
+          "title": "カスタムRAG Chat",
           "icon": "icon.png"
-        },
-        {
-          "id": "aiChatContainer",
-          "title": "AI Chat",
-          "icon": "resources/ai_chat_icon.svg"
         }
       ]
     },
     "views": {
       "chatContainer": [
         {
+          "type": "webview",
           "id": "chatView",
-          "name": "Chat"
-        }
-      ],
-      "aiChatContainer": [
-        {
-          "id": "aiChatView",
-          "name": "AI Chat"
+          "name": "カスタムRAG Chat",
+          "icon": "icon.png"
         }
       ]
     }
