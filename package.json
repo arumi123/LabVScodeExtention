@@ -14,29 +14,6 @@
   ],
   "main": "./dist/extension.js",
   "contributes": {
-    "commands": [
-      {
-        "command": "labextention.helloWorld",
-        "title": "Hello World"
-      },
-      {
-        "command": "labextention.createDirectories",
-        "title": "ディレクトリ群を作成"
-      },
-      {
-        "command": "labextention.showChatView",
-        "title": "Show Chat View"
-      }
-    ],
-    "menus": {
-      "editor/context": [
-        {
-          "when": "editorFocus",
-          "command": "labextention.createDirectories",
-          "group": "z_commands"
-        }
-      ]
-    },
     "viewsContainers": {
       "activitybar": [
         {
@@ -55,7 +32,29 @@
           "icon": "icon.png"
         }
       ]
-    }
+    },
+    "chatParticipants": [
+      {
+        "id": "chat-tutorial.code-tutor",
+        "fullName": "Code Tutor",
+        "name": "tutoraaaa",
+        "description": "What can I teach you?",
+        "isSticky": true,
+        "commands": [
+          {
+            "name": "exercise",
+            "description": "Provide exercises to practice a concept."
+          }
+        ]
+      },
+      {
+        "id": "azure-rag-system",
+        "fullName": "Azure RAG System",
+        "name": "AzureRAG",
+        "description": "Azure-based RAG system",
+        "isSticky": true
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -69,17 +68,21 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.97.0",
+    "@types/axios": "^0.9.36",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/vscode": "^1.97.0",
     "@typescript-eslint/eslint-plugin": "^8.22.0",
     "@typescript-eslint/parser": "^8.22.0",
-    "eslint": "^9.19.0",
-    "typescript": "^5.7.3",
-    "ts-loader": "^9.5.2",
-    "webpack": "^5.97.1",
-    "webpack-cli": "^6.0.1",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.19.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.8.2"
   }
 }

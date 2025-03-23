@@ -1,3 +1,16 @@
+# プロジェクトへの貢献方法
+## 環境構築
+devcontainerを使って開発環境を構築します。
+1. Visual Studio Codeをインストールします。
+2. Remote - Containers拡張機能をインストールします。
+3. Visual Studio Codeを再起動します。
+4. このリポジトリをクローンします。
+5. Visual Studio Codeでこのリポジトリを開きます。
+6. 右下に表示されるポップアップをクリックして、`Reopen in Container`を選択します。
+7. コンテナが起動するのを待ちます。
+
+
+
 # labextention README
 
 This is the README for your extension "labextention". After writing up a brief description, we recommend including the following sections.
